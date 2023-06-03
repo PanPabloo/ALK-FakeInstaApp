@@ -1,0 +1,19 @@
+.SinglePhoto {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  &__img {
+    position: absolute;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50% ;
+    transform: translate(-50%,-50%);
+    transition: 250ms linear;
+    &:hover {
+      transform: translate(-50%,-50%) scale(1.05);
+      cursor: pointer;
+    }
+  }
+}

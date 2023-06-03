@@ -6,6 +6,9 @@ import {
    QueryClientProvider,
 } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+import { SinglePhoto } from "./components/SinglePhoto";
+import './App.css';
+
 
 const queryClient = new QueryClient()
 
@@ -13,20 +16,23 @@ export default function App() {
    return (
       <QueryClientProvider client={queryClient}>
          <Example />
+         <ReactQueryDevtools initialIsOpen />
       </QueryClientProvider>
    )
 }
 
 
 
+
 function Example() {
-   const { ref, inView } = useInView();
+   const { ref, inView } = useInView({
+      rootMargin: '1000px'
+   });
    
-   const MAX_PHOTO_AMOUNT = 1080; // zmienić na 1080!
-   const photosLimit = 20;
+   const MAX_PHOTO_AMOUNT = 100; // zmienić na 1080!
+   const photosLimit = 10;
    
-   
-   const fetchData = async ({ pageParam = 1 }) => {
+   const fetchPhotosFromApi = async ({ pageParam = 1 }) => {
       const res = await fetch(`https://picsum.photos/v2/list?limit=${photosLimit}&page=${pageParam}`)
       return res.json()
    }
@@ -40,8 +46,8 @@ function Example() {
       isFetchingNextPage,
       status,
    } = useInfiniteQuery({
-         queryKey: ['projects'],
-         queryFn: fetchData,
+         queryKey: ['photos'],
+         queryFn: fetchPhotosFromApi,
          getNextPageParam: (lastPage, pages) => {
             if (pages.length < MAX_PHOTO_AMOUNT / photosLimit) return pages.length + 1;
          },
@@ -62,17 +68,18 @@ function Example() {
          ) : status === 'error' ? (
             <span>Error: {error.message}</span>
          ) : (
-            <>
-               {data.pages.map((page) => (
+            <div className="gallery">
+               {data.pages.map((page, pageIndex) => (
                   <React.Fragment key={page[0].id}>
-                     {page.map((photo) => (
-                        <>
-                           <img src={photo['download_url']} alt="" key={photo.id} style={{height: 500}}/>
-                        </>
+                     {page.map((photo, photoIndex) => (
+                        
+                           <SinglePhoto key={photo.id} source={photo} index={[pageIndex, photoIndex]}/>
+                        
+                           // <img src={photo['download_url']} alt="" key={photo.id} style={{height: 500}} />
+                        
                      ))}
                   </React.Fragment>
                ))}
- 
                
                <div>
                   <button
@@ -92,11 +99,9 @@ function Example() {
                      ? 'Background Updating...'
                      : null}
                </div>
-            </>
+            </div>
          )}
-         <hr />
 
-         <ReactQueryDevtools initialIsOpen />
       </div>
    )
 }
