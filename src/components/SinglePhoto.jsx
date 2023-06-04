@@ -1,30 +1,30 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { SkeletonPhoto } from "./SkeletonPhoto";
 import './SinglePhoto.scss';
 import { getRandomGridSpanSize } from "../utils";
 
-export const SinglePhoto = props => {
+export const SinglePhoto = (props) => {
    
    const [isLoaded, setIsLoaded] = useState(false);
-   const photoUrl = props.source['download_url'];
+   const photo = props.source;
    
    const handleIsLoaded = () => {
       setIsLoaded(true);
    }
-   
+   console.log('render single photo');
    return (
-      <div className={"SinglePhoto " + getRandomGridSpanSize(photoUrl)}>
-         {/*{!isLoaded*/}
-         {/*   ? <SkeletonPhoto />*/}
-         {/*   : null}*/}
+      <div className={"SinglePhoto " + getRandomGridSpanSize(photo.id, photo.width, photo.height)}>
+         {!isLoaded
+            ? <SkeletonPhoto />
+            : null}
          <div className="photoContainer">
-         <img
-            alt={'Autor zdjęcia: ' + props.source.author}
-            src={photoUrl}
-            className="SinglePhoto__img"
-            onLoad={handleIsLoaded}
-         />
-         
+            <img
+               alt={'Autor zdjęcia: ' + props.source.author}
+               src={photo['download_url']}
+               className="SinglePhoto__img"
+               onLoad={handleIsLoaded}
+               onClick={props.fullScreen}
+            />
          </div>
       </div>
    )

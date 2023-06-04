@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from 'react'
+import { useEffect, Fragment, useCallback, useState, useRef } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
@@ -6,9 +6,13 @@ import { SinglePhoto } from "./SinglePhoto.jsx";
 import BackdropSinglePage from "./BackdropSinglePage.jsx";
 import { InfoDialog } from "./InfoDialog";
 import { getPhotos } from "../api/images.js";
+import { PhotoFullScreen } from "./PhotoFullScreen";
 
 
 export const PhotoGallery = props => {
+   
+   const [isFullScreen, setIsFullScreen] = useState(false);
+   const fullPhotoUrl = useRef(null);
    
    const {
       data,
@@ -32,6 +36,14 @@ export const PhotoGallery = props => {
       }
    }, [inView]);
    
+   const handleFullScreen = useCallback(((e) => {
+      fullPhotoUrl.current = {
+         url: e.target.src,
+         alt: e.target.alt
+      };
+      setIsFullScreen(true)
+   }), []);
+   
    return (
       <div>
          {status === 'loading' ? (
@@ -40,11 +52,12 @@ export const PhotoGallery = props => {
             <InfoDialog infoTitle="Bład podczas pobierania" message={error.message} />
          ) : (
             <>
+               {isFullScreen && <PhotoFullScreen url={fullPhotoUrl.current.url} alt={fullPhotoUrl.current.alt} close={() => setIsFullScreen(false)} />}
                <div className="gallery">
-                  {data.pages.map((page, pageIndex) => (
+                  {data.pages.map((page) => (
                      <Fragment key={page.id}>
-                        {page.data.map((photo, photoIndex) => (
-                           <SinglePhoto key={photo.id} source={photo} index={[pageIndex, photoIndex]}/>
+                        {page.data.map((photo) => (
+                           <SinglePhoto key={photo.id} source={photo} fullScreen={handleFullScreen} />
                         ))}
                      </Fragment>
                   ))}
