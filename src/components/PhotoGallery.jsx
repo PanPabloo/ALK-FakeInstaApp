@@ -5,8 +5,9 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { SinglePhoto } from "./SinglePhoto.jsx";
 import BackdropSinglePage from "./BackdropSinglePage.jsx";
 import { InfoDialog } from "./InfoDialog";
-import { getPhotos } from "../api/images.js";
+import { getPhotos } from "../api/getPhotos.js";
 import { PhotoFullScreen } from "./PhotoFullScreen";
+import './PhotoGallery.scss'
 
 
 export const PhotoGallery = props => {
@@ -53,7 +54,7 @@ export const PhotoGallery = props => {
          ) : (
             <>
                {isFullScreen && <PhotoFullScreen url={fullPhotoUrl.current.url} alt={fullPhotoUrl.current.alt} close={() => setIsFullScreen(false)} />}
-               <div className="gallery">
+               <div className="PhotoGallery">
                   {data.pages.map((page) => (
                      <Fragment key={page.id}>
                         {page.data.map((photo) => (

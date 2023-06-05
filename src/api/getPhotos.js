@@ -1,9 +1,9 @@
 import axios from "axios"
 
-const API_KEY = 'XlnB6h90hjXWqKHvqH8rAMFan3TEzgVSaK2E8UmnH6AqPT06KtsIbqQ2';
+// const API_KEY = 'XlnB6h90hjXWqKHvqH8rAMFan3TEzgVSaK2E8UmnH6AqPT06KtsIbqQ2';
 
-const MAX_PHOTO_AMOUNT = 1; // zmienić na 1080!
-const photosLimit = 1;
+const MAX_PHOTO_AMOUNT = 100; // zmienić na 1080!
+const photosLimit = 10;
 
 export const getPhotos = async ({ pageParam = 1 }) => {
    const res = await axios.get(`https://picsum.photos/v2/list?limit=${photosLimit}&page=${pageParam}`);
