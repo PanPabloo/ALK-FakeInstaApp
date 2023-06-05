@@ -1,0 +1,38 @@
+
+.MainView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MainContainer {
+  display: flex;
+  justify-content: center;
+  width: 1050px;
+  margin-left: 220px;
+
+  @media(max-width: 1264px) {
+    margin-left: 50px;
+    width: auto;
+  }
+  @media(max-width: 767px) {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  &__main {
+    background-color: aqua;
+    width: 670px;
+    @media(max-width: 669px) {
+      width: 100vw;
+    }
+  }
+
+  &__aside {
+    margin: 30px ;
+
+    @media(max-width: 1159px) {
+      display: none;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import SendIcon from '@mui/icons-material/Send';
 import FaceIcon from '@mui/icons-material/Face';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 import './NavBarBottom.scss';
 import { NavBarBottomItem } from "./NavBarBottomItem";
@@ -16,6 +17,11 @@ export const NavBarBottom = props => {
    
       <nav className="NavBarBottom">
          <ul className="NavBarBottom__list">
+            <div className="NavBarBottom__logo">
+               <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="FakeInsta">
+                  <InstagramIcon sx={{fontSize: '5em', color: '#dc2525'}}/>
+               </NavBarBottomItem>
+            </div>
             <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Strona główna">
                <HomeOutlinedIcon sx={{fontSize: '5em'}}/>
             </NavBarBottomItem>
