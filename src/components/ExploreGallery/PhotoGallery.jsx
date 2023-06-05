@@ -3,10 +3,10 @@ import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { SinglePhoto } from "./SinglePhoto.jsx";
-import BackdropSinglePage from "./BackdropSinglePage.jsx";
-import { InfoDialog } from "./InfoDialog";
-import { getPhotos } from "../api/getPhotos.js";
-import { PhotoFullScreen } from "./PhotoFullScreen";
+import BackdropSinglePage from "../BackdropSinglePage.jsx";
+import { InfoDialog } from "../InfoDialog.jsx";
+import { getPhotos } from "../../api/getPhotos.js";
+import { PhotoFullScreen } from "./PhotoFullScreen.jsx";
 import './PhotoGallery.scss'
 
 

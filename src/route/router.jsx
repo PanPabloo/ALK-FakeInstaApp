@@ -1,4 +1,4 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { ErrorView } from "../pages/ErrorView.jsx";
 import { MainView } from "../pages/MainView";
 import { ExploreView } from "../pages/ExploreView";

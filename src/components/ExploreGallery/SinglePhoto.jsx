@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
-import { SkeletonPhoto } from "./SkeletonPhoto";
+import { SkeletonPhoto } from "../Skeleton/SkeletonPhoto.jsx";
 import './SinglePhoto.scss';
-import { getRandomGridSpanSize } from "../utils";
+import { getRandomGridSpanSize } from "../../utils/index.js";
 
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import { styled } from "@mui/material";
@@ -14,8 +14,6 @@ export const SinglePhoto = memo(function SinglePhoto(props) {
    const handleIsLoaded = () => {
       setIsLoaded(true);
    }
-   
-   console.log('render')
    
    return (
       <div className={"SinglePhoto " + getRandomGridSpanSize(photo.id, photo.width, photo.height)}>

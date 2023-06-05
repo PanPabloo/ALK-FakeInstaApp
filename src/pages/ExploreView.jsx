@@ -1,12 +1,11 @@
-import { NavBarBottom } from "../components/NavBarBottom";
-import { PhotoGallery } from "../components/PhotoGallery";
-import { TopBar } from "../components/TopBar.jsx";
+import { NavBarBottom } from "../components/NavBars/NavBarBottom.jsx";
+import { PhotoGallery } from "../components/ExploreGallery/PhotoGallery.jsx";
+import { TopBar } from "../components/NavBars/TopBar.jsx";
 import './ExploreView.scss';
 
 export const ExploreView = props => {
    
    return (
-      
       <>
          <div className="ExploreView__navbar">
             <TopBar />

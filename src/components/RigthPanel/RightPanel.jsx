@@ -1,7 +1,7 @@
 
 import './RightPanel.scss';
-import { ProfileMain } from "./ProfilMain.jsx";
-import { ProfileSuggested } from "./ProfilSuggested";
+import { ProfileMain } from "../ProfileMain/ProfileMain.jsx";
+import { ProfileSuggested } from "../ProfileSuggested/ProfileSuggested.jsx";
 
 export const RightPanel = props => {
    

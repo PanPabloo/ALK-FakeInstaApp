@@ -4,7 +4,7 @@ export const NavBarBottomItem = props => {
    
    return (
       <li className="NavBarBottom__listItem">
-         <a href="/" className="NavBarBottom__link" onClick={props.handleStopDefaultAnchor}>
+         <a href="/src/pages" className="NavBarBottom__link" onClick={props.handleStopDefaultAnchor}>
             <IconButton aria-label={props.label} sx={{color: '#222'}}>
                {props.children}
             </IconButton>
