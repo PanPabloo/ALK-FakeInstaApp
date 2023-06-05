@@ -7,7 +7,6 @@ import { TopBar } from "../components/TopBar.jsx";
 
 export const MainView = props => {
    
-   
    return (
       
       <>
@@ -16,8 +15,7 @@ export const MainView = props => {
          <div className="MainView">
             <div className="MainContainer">
                <div className="MainContainer__main">
-                  test
-                  {/*<PhotoGallery/>*/}
+                  <PhotoGallery/>
                </div>
                <div className="MainContainer__aside">
                   <RightPanel/>

@@ -1,19 +1,16 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-import { PhotoGallery } from "../components/PhotoGallery.jsx";
 import { ErrorView } from "../pages/ErrorView.jsx";
 import { MainView } from "../pages/MainView";
+import { ExploreView } from "../pages/ExploreView";
 
 export const router = createBrowserRouter([
    {
       path: "/",
-      // element: <PhotoGallery />,
       element: <MainView />,
       errorElement: <ErrorView />,
    },
    {
-      path: "/test",
-      element: <div>
-         <Link to={'/'}>Strona Główna</Link>
-      </div>,
+      path: "/explore",
+      element: <ExploreView />,
    },
 ]);

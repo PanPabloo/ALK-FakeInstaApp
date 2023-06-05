@@ -1,0 +1,21 @@
+.ExploreView {
+
+  --gridSize: 320px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 220px;
+
+  @media(max-width: 1264px) {
+    margin-left: 50px;
+  }
+
+  @media(max-width:  767px) {
+    margin-left: 0;
+  }
+
+  @media(max-width: 974px) {
+    --gridSize: calc(100vw / 3 - 15px);
+  }
+}

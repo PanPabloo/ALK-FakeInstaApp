@@ -1,6 +1,5 @@
 
 import './TopBar.scss';
-import { TextField } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram.js";
 
 export const TopBar = props => {
