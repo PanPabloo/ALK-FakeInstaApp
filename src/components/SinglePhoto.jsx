@@ -15,6 +15,8 @@ export const SinglePhoto = memo(function SinglePhoto(props) {
       setIsLoaded(true);
    }
    
+   console.log('render')
+   
    return (
       <div className={"SinglePhoto " + getRandomGridSpanSize(photo.id, photo.width, photo.height)}>
          {!isLoaded

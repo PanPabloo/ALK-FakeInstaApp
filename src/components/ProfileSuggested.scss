@@ -1,0 +1,38 @@
+.ProfileSuggested {
+  display: flex;
+  font-size: 35px;
+  margin-block: 10px;
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 3rem;
+  }
+
+  &__desc-nick {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+
+  &__desc-name {
+    font-size: 1.3rem;
+    color: #888;
+  }
+
+  &__link {
+    flex-grow: 1;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    color: rgb(0, 149, 246);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__desc-link {
+    cursor: pointer;
+  }
+}

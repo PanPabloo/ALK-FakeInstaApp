@@ -16,7 +16,7 @@ export const ErrorView = props => {
                      variant="outlined"
                      endIcon={<ExitToAppIcon />}
                   >
-                     POWRÓT DO STRONY GŁÓWNEJ
+                     powrót do strony głównej
                   </ColorButton>
                </Link>
          </div>
@@ -28,6 +28,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
    backgroundColor: green[500],
    border: 'none',
    fontSize: '2rem',
+   textTransform: 'uppercase',
    '&:hover': {
       backgroundColor: green[700],
       border: 'none'
