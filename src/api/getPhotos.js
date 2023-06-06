@@ -1,8 +1,6 @@
 import axios from "axios"
 
-// const API_KEY = 'XlnB6h90hjXWqKHvqH8rAMFan3TEzgVSaK2E8UmnH6AqPT06KtsIbqQ2';
-
-const MAX_PHOTO_AMOUNT = 100; // zmienić na 1080!
+const MAX_PHOTO_AMOUNT = 1080;
 const photosLimit = 10;
 
 export const getPhotos = async ({ pageParam = 1 }) => {

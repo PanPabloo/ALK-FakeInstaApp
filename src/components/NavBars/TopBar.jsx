@@ -11,7 +11,7 @@ export const TopBar = props => {
       <div className="TopBar">
          <div className="TopBar__logo" onClick={() => navigate('/')}>
             <InstagramIcon sx={{fontSize: '1.5em', color: '#dc2525'}}/>
-            <p>Fake-Insta</p>
+            <p>FakeInsta</p>
          </div>
       </div>
    )

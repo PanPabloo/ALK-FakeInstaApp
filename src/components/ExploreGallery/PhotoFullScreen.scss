@@ -8,10 +8,21 @@
   position: relative;
   flex-direction: column;
 
+  @media(max-width: 1024px) {
+    width: 100vw;
+    height: auto;
+    padding: 10px;
+  }
+
   &__img {
     display: block;
     height: 100%;
     outline: 1rem solid white;
+
+    @media(max-width: 1024px) {
+      width: 100%;
+      height: auto;
+    }
   }
   &__desc {
     position: absolute;
@@ -37,12 +48,16 @@
     align-items: center;
     transition: 100ms linear;
 
+    @media(max-width: 1024px) {
+      transform: scale(0.7);
+    }
+
     &:hover {
       color: #dc2525;
     }
 
     &-fontAwsome {
-      font-size: 8rem;
+      font-size: 5rem;
     }
 
     &-text {
