@@ -1,6 +1,6 @@
 # FakeInsta App - Instagram clone
 
-Projekt zaliczeniowy na zakońćzenie Studiów Podyplomowych "Frontend Development z React" prowadzonych przez Akademię Leona Koźmińskiego w Warszawie.
+Projekt zaliczeniowy na zakończenie Studiów Podyplomowych "Frontend Development z React" prowadzonych przez Akademię Leona Koźmińskiego w Warszawie.
 
 ## Wymagania techniczne:
 1. Aplikacja działa w sieci Internet

@@ -10,7 +10,9 @@ export default function App() {
    return (
       <QueryClientProvider client={queryClient}>
          <RouterProvider router={router}/>
-         <ReactQueryDevtools initialIsOpen />
+         
+         {/*REACT QUERY DEVELOP TOOL*/}
+         {/*<ReactQueryDevtools initialIsOpen />*/}
       </QueryClientProvider>
    )
 }
