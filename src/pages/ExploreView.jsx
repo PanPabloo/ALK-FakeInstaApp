@@ -12,11 +12,7 @@ export const ExploreView = props => {
             <NavBarBottom/>
          </div>
          <div className="ExploreView">
-            {/*<div className="MainContainer">*/}
-               {/*<div className="MainContainer__main">*/}
-                  <PhotoGallery/>
-               {/*</div>*/}
-            {/*</div>*/}
+            <PhotoGallery/>
          </div>
       </>
    

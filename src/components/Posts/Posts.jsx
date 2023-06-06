@@ -1,4 +1,4 @@
-import { useEffect, Fragment, useCallback, useState, useRef } from 'react'
+import { useEffect, Fragment } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
@@ -14,7 +14,6 @@ const handleNextPage = url => {
    const { nextPage } = url.matchAll(regExp).next().value.groups;
    return nextPage
 }
-
 
 export const Posts = props => {
    
@@ -41,6 +40,8 @@ export const Posts = props => {
          fetchNextPage()
       }
    }, [inView]);
+   
+
    
    return (
       <div>

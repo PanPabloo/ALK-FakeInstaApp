@@ -18,7 +18,6 @@ export const NavBarBottom = props => {
    const handleStopDefaultAnchor = (event) => event.preventDefault();
    
    return (
-   
       <nav className="NavBarBottom">
          <ul className="NavBarBottom__list">
             <div className="NavBarBottom__logo width-100" onClick={() => navigate('/')}>

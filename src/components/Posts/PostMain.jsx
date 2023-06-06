@@ -7,8 +7,9 @@ import SendIcon from '@mui/icons-material/Send';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 import './PostMain.scss';
+import { memo } from "react";
 
-export const PostMain = props => {
+export const PostMain = memo( function PostMain(props) {
    
    const color = props.species === 'Human' ? '#ffc5ac' : '#a6ffa9'
    
@@ -46,4 +47,4 @@ export const PostMain = props => {
          </div>
       </div>
    )
-}
+})
