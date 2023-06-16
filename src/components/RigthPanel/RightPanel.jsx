@@ -1,14 +1,13 @@
-
 import './RightPanel.scss';
 import { ProfileMain } from "../ProfileMain/ProfileMain.jsx";
 import { ProfileSuggested } from "../ProfileSuggested/ProfileSuggested.jsx";
 
-export const RightPanel = props => {
+export const RightPanel = () => {
    
    return (
-   
+      
       <div className="RightPanel">
-         <ProfileMain />
+         <ProfileMain/>
          <div className="RightPanel__desc">
             <p className="RightPanel__desc-label">Propozycje dla Ciebie</p>
             <p className="RightPanel__link">Zobacz wszystkich</p>

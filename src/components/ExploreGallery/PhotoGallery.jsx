@@ -1,4 +1,4 @@
-import { useEffect, Fragment, useCallback, useState, useRef } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
@@ -10,23 +10,17 @@ import { PhotoFullScreen } from "./PhotoFullScreen.jsx";
 import './PhotoGallery.scss'
 
 
-export const PhotoGallery = props => {
+export const PhotoGallery = () => {
    
    const [isFullScreen, setIsFullScreen] = useState(false);
    const fullPhotoUrl = useRef(null);
    
    const {
-      data,
-      error,
-      fetchNextPage,
-      status,
+      data, error, fetchNextPage, status,
    } = useInfiniteQuery({
-         queryKey: ['photos'],
-         queryFn: getPhotos,
-         getNextPageParam: (lastPage) => lastPage.isNextPage,
-      }
-   );
-
+      queryKey: ['photos'], queryFn: getPhotos, getNextPageParam: (lastPage) => lastPage.isNextPage,
+   });
+   
    const { ref, inView } = useInView({
       rootMargin: '100px'
    });
@@ -39,33 +33,23 @@ export const PhotoGallery = props => {
    
    const handleFullScreen = useCallback(((e) => {
       fullPhotoUrl.current = {
-         url: e.target.src,
-         alt: e.target.alt
+         url: e.target.src, alt: e.target.alt
       };
       setIsFullScreen(true)
    }), []);
    
-   return (
-      <div>
-         {status === 'loading' ? (
-            <BackdropSinglePage/>
-         ) : status === 'error' ? (
-            <InfoDialog infoTitle="Bład podczas pobierania" message={error.message} />
-         ) : (
-            <>
-               {isFullScreen && <PhotoFullScreen url={fullPhotoUrl.current.url} alt={fullPhotoUrl.current.alt} close={() => setIsFullScreen(false)} />}
+   return (<div>
+         {status === 'loading' ? (<BackdropSinglePage/>) : status === 'error' ? (
+            <InfoDialog infoTitle="Bład podczas pobierania" message={error.message}/>) : (<>
+               {isFullScreen && <PhotoFullScreen url={fullPhotoUrl.current.url} alt={fullPhotoUrl.current.alt}
+                                                 close={() => setIsFullScreen(false)}/>}
                <div className="PhotoGallery">
-                  {data.pages.map((page) => (
-                     <Fragment key={page.id}>
+                  {data.pages.map((page) => (<Fragment key={page.id}>
                         {page.data.map((photo) => (
-                           <SinglePhoto key={photo.id} source={photo} fullScreen={handleFullScreen} />
-                        ))}
-                     </Fragment>
-                  ))}
+                           <SinglePhoto key={photo.id} source={photo} fullScreen={handleFullScreen}/>))}
+                     </Fragment>))}
                </div>
-               <span ref={ref} />
-            </>
-         )}
-      </div>
-   )
+               <span ref={ref}/>
+            </>)}
+      </div>)
 }

@@ -1,7 +1,7 @@
 import { Skeleton } from "@mui/material";
 import './SkeletonPhoto.scss';
 
-export const SkeletonPhoto = props => {
+export const SkeletonPhoto = () => {
    
    return (
       <div className="SkeletonPhoto">
@@ -17,9 +17,9 @@ export const SkeletonPhoto = props => {
             variant="circular"
             width={75}
             height={75} sx={{
-               marginBlock: '20px',
-               bgcolor: '#ddd'
-            }}
+            marginBlock: '20px',
+            bgcolor: '#ddd'
+         }}
          />
          <Skeleton
             variant="rounded"

@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
@@ -15,7 +15,7 @@ const handleNextPage = url => {
    return nextPage
 }
 
-export const Posts = props => {
+export const Posts = () => {
    
    const {
       data,
@@ -41,28 +41,33 @@ export const Posts = props => {
       }
    }, [inView]);
    
-
    
    return (
       <div>
-         {status === 'loading' ? (
+         { status === 'loading' ? (
             <BackdropSinglePage/>
          ) : status === 'error' ? (
-            <InfoDialog infoTitle="Bład podczas pobierania" message={error.message} />
+            <InfoDialog infoTitle="Bład podczas pobierania" message={ error.message }/>
          ) : (
             <>
                <div className="Posts">
-                  {data.pages.map((page) => (
-                     <Fragment key={uuid()}>
-                        {page.results.map((post) => (
-                           <PostMain key={post.id} imgSrc={post.image} name={post.name} locationName={post.location.name} created={post.created} species={post.species}/>
-                        ))}
+                  { data.pages.map((page) => (
+                     <Fragment key={ uuid() }>
+                        { page.results.map((post) => (
+                           <PostMain
+                              key={ post.id }
+                              imgSrc={ post.image }
+                              name={ post.name }
+                              locationName={ post.location.name }
+                              created={ post.created }
+                              species={ post.species }/>
+                        )) }
                      </Fragment>
-                  ))}
+                  )) }
                </div>
-               <span ref={ref} />
+               <span ref={ ref }/>
             </>
-         )}
+         ) }
       </div>
    )
 }

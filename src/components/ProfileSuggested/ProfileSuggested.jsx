@@ -5,7 +5,7 @@ export const ProfileSuggested = props => {
    
    return (
       <div className="ProfileSuggested">
-         <FaceIcon sx={{fontSize: '1em', color: props.color}}/>
+         <FaceIcon sx={{ fontSize: '1em', color: props.color }}/>
          <div className="ProfileSuggested__desc">
             <p className="ProfileSuggested__desc-nick">{props.children}</p>
             <p className="ProfileSuggested__desc-name">propozycja dla Ciebie</p>

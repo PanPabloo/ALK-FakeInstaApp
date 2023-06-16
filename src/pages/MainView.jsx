@@ -5,16 +5,16 @@ import './MainView.scss';
 import { TopBar } from "../components/NavBars/TopBar.jsx";
 import { Posts } from "../components/Posts/Posts.jsx";
 
-export const MainView = props => {
+export const MainView = () => {
    
    return (
       <>
-         <TopBar />
+         <TopBar/>
          <NavBarBottom/>
          <div className="MainView">
             <div className="MainContainer">
                <div className="MainContainer__main">
-                  <Posts />
+                  <Posts/>
                </div>
                <div className="MainContainer__aside">
                   <RightPanel/>

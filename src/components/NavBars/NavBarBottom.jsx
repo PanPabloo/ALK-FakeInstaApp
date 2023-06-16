@@ -11,7 +11,7 @@ import './NavBarBottom.scss';
 import { NavBarBottomItem } from "./NavBarBottomItem.jsx";
 
 
-export const NavBarBottom = props => {
+export const NavBarBottom = () => {
    
    const navigate = useNavigate();
    
@@ -22,37 +22,37 @@ export const NavBarBottom = props => {
          <ul className="NavBarBottom__list">
             <div className="NavBarBottom__logo width-100" onClick={() => navigate('/')}>
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="FakeInsta">
-                 <InstagramIcon sx={{fontSize: '5em', color: '#dc2525'}}/>
+                  <InstagramIcon sx={{ fontSize: '5em', color: '#dc2525' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100" onClick={() => navigate('/')}>
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Strona główna">
-                  <HomeOutlinedIcon sx={{fontSize: '5em'}}/>
+                  <HomeOutlinedIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100" onClick={() => navigate('/explore')}>
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Odkrywaj">
-                  <ExploreIcon sx={{fontSize: '5em'}}/>
+                  <ExploreIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100">
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Rolki">
-                  <VideoLibraryIcon sx={{fontSize: '5em'}}/>
+                  <VideoLibraryIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100">
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Utwórz">
-                  <AddBoxIcon sx={{fontSize: '5em'}}/>
+                  <AddBoxIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100">
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Wiadomości">
-                  <SendIcon sx={{fontSize: '5em'}}/>
+                  <SendIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
             <div className="width-100">
                <NavBarBottomItem handleStopDefaultAnchor={handleStopDefaultAnchor} label="Profil">
-                  <FaceIcon sx={{fontSize: '5em'}}/>
+                  <FaceIcon sx={{ fontSize: '5em' }}/>
                </NavBarBottomItem>
             </div>
          </ul>
