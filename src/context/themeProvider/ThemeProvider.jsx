@@ -1,30 +1,30 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-let theme = createTheme();
+const baseTheme = createTheme();
 
-theme = createTheme(theme,{
+const theme = createTheme({
     breakpoints: {
         values: {
             xs: 0,
             sm: 470,
             md: 768,
             lg: 1024,
-            xl: 1536,
+            xl: 1270
         },
     },
-    
-    components: {
-        'MuiIconButton': {
-            styleOverrides: {
-                root: {
-                    color: theme.palette.text.primary
+    palette: {
+        fakeInstaColor: '#dc2525'
+    },
+        components: {
+            'MuiIconButton': {
+                styleOverrides: {
+                    root: {
+                        color: baseTheme.palette.text.primary
+                    }
                 }
             }
         }
-    }
-
-    
-});
+})
 
 export default function CustomThemeProvider({ children }) {
     return (

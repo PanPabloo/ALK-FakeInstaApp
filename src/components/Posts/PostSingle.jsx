@@ -72,7 +72,6 @@ export const PostSingle = memo(function PostSingle(props) {
                             <BookmarkIcon color="primary" sx={{ fontSize: 35, padding: '5px' }} />
                         </IconButton>
                     </Box>
-                
                 </div>
             </PostSingleBox>
         </>

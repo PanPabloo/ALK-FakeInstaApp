@@ -12,7 +12,7 @@ export default function App() {
          <RouterProvider router={router}/>
          
          {/*REACT QUERY DEVELOP TOOL*/}
-         <ReactQueryDevtools  />
+         {/*<ReactQueryDevtools  />*/}
       </QueryClientProvider>
    )
 }

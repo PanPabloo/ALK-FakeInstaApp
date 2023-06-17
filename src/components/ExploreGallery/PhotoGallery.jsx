@@ -48,7 +48,7 @@ export const PhotoGallery = () => {
                 ? <BackdropSinglePage />
                 : status === 'error'
                     ? <InfoDialog infoTitle="Bład podczas pobierania" message={error.message} />
-                    : <>
+                    : <div>
                         {isFullScreen
                             && <PhotoFullScreen
                                 url={fullPhotoUrl.current.url}
@@ -63,7 +63,7 @@ export const PhotoGallery = () => {
                             </Fragment>))}
                         </PhotoGalleryBox>
                         <span ref={ref} />
-                    </>}
+                    </div>}
         </>
     )
 };

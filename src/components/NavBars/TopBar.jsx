@@ -1,17 +1,26 @@
-import './TopBar.scss';
-import InstagramIcon from "@mui/icons-material/Instagram.js";
-import { useNavigate } from "react-router-dom";
+import { Box, styled } from "@mui/material";
+import { FakeInstaLogoButton } from "./common/FakeInstaLogoButton";
 
 export const TopBar = () => {
-   
-   const navigate = useNavigate();
-   
-   return (
-      <div className="TopBar">
-         <div className="TopBar__logo" onClick={() => navigate('/')}>
-            <InstagramIcon sx={{ fontSize: '1.5em', color: '#dc2525' }}/>
-            <p>FakeInsta</p>
-         </div>
-      </div>
-   )
-}
+    
+    return (
+        <TopBarBox>
+            <FakeInstaLogoButton topBar/>
+        </TopBarBox>
+    )
+};
+
+const TopBarBox = styled(Box)(({ theme }) => ({
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 60,
+    display: 'none',
+    alignItems: 'center',
+    borderBottom: `1px solid ${theme.palette.text.primary}`,
+    
+    [theme.breakpoints.down("md")]: {
+        display: 'flex',
+    }
+}));

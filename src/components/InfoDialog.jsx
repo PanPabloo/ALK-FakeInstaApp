@@ -14,7 +14,7 @@ export const InfoDialog = props => {
    };
    
    return (
-      <div>
+       <div>
          <Dialog
             open={open}
             onClose={handleClose}

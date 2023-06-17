@@ -12,7 +12,6 @@ Projekt zaliczeniowy na zakończenie Studiów Podyplomowych "Frontend Developmen
 - React Query
 - React Router
 - Material UI
-- SASS
 
 ## Omówienie aplikacji
 Aplikacja FakeInsta została wykonana w oparciu o blibiotekę ReactJS.
