@@ -104,6 +104,9 @@ const NavItem = styled('li')(({ theme }) => ({
     justifyContent: 'center',
     width: '100%',
     overflow: 'hidden',
+    '& button': {
+        flexGrow: 1,
+    }
 }));
 
 const MenuButton = styled(Button)(({ theme }) => ({
@@ -118,8 +121,11 @@ const MenuButton = styled(Button)(({ theme }) => ({
     minWidth: 'auto',
     color: theme.palette.text.primary,
     [theme.breakpoints.down(400)]: {
-        fontSize: 35
+        fontSize: 35,
     },
+    [theme.breakpoints.down("md")]: {
+        justifyContent: 'center',
+    }
 }));
 
 const MenuButtonLabel = styled(Typography)(({ theme }) => ({

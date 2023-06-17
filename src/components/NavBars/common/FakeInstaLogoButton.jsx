@@ -8,7 +8,13 @@ export const FakeInstaLogoButton = props => {
     const navigate = useNavigate();
     
     return (
-        <MenuButton onClick={() => navigate('/')} sx={{ height: '60px', '--isTopBar': props.topBar || 'none' }}>
+        <MenuButton
+            onClick={() => navigate('/')}
+            sx={{
+            height: '60px',
+            '--isVisible': props.topBar || 'none',
+            '--isCenter': props.topBar || 'center'
+        }}>
             <InstagramIcon sx={{ fontSize: '1em', color: (theme) => theme.palette.fakeInstaColor }} />
             <MenuButtonLabel sx={{ fontWeight: 700, color: (theme) => theme.palette.fakeInstaColor }}>
                 FakeInsta
@@ -32,6 +38,9 @@ const MenuButton = styled(Button)(({ theme }) => ({
     [theme.breakpoints.down(400)]: {
         fontSize: 35
     },
+    [theme.breakpoints.down("md")]: {
+        justifyContent: 'var(--isCenter)',
+    }
 }));
 
 const MenuButtonLabel = styled(Typography)(({ theme }) => ({
@@ -40,6 +49,6 @@ const MenuButtonLabel = styled(Typography)(({ theme }) => ({
     textTransform: 'none',
     color: theme.palette.text.primary,
     [theme.breakpoints.down("xl")]: {
-        display: 'var(--isTopBar)'
+        display: 'var(--isVisible)'
     }
 }));
